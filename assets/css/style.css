@@ -6,6 +6,7 @@
     --white-color: #F6F6F6;
     --blue-color: #22D4FD;
     --hover-color: #272727;
+    --scroll-color: #888;
 }
 
 *{
@@ -22,7 +23,7 @@
     gap: 80px;
 }
 
-.home__page, .project__page {
+.home__page, .about__page, .project__page {
     font-family: var(--font);
     color: var(--blue-color);
     font-size: 24px;
@@ -30,7 +31,7 @@
     text-decoration: none;
 }
 
-.home__page:hover, .project__page:hover {
+.home__page:hover, .about__page:hover, .project__page:hover {
     cursor: pointer;
     color: var(--white-color);
     transition: background-color 0.5s;
@@ -98,6 +99,13 @@ body {
     font-size: 24px;
 }
 
+.description__about {
+    font-size: 15px;
+    font-weight: 200;
+    margin-right: 10px;
+
+}
+
 .contact {
     display: flex;
     justify-content: space-between;
@@ -136,22 +144,39 @@ body {
     font-family: var(--font);
     font-size: 24px;
     padding: 24px;
-    flex-grow: 1;
 }
 
-@media only screen and (max-width: 768px) {
+::-webkit-scrollbar {
+    width: 8px;
+    border: 1px solid var(--blue-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color);
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 1024px ) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        flex: 1;
+        padding: 5%;
+    }
+
     .header__container {
         padding: 8% 5%;
     }
 
     .header__menu {
         gap: 20px;
-    }
-
-    .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 5%;
     }
 
     .information {
@@ -171,14 +196,15 @@ body {
     }
 
     .footer__desing {
-        padding: 16px;
-        margin: 10px;
+        padding: 2%;
+        width: calc(90% + 60px);
+        text-align: center;
+        font-size: 12px;
+        font-weight: 200;
+        font-family: var(--font);
     }
 
     .image {
         display: none;
     }
 }
-
-
-
